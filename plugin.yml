@@ -1,0 +1,11 @@
+name: PersonaAdapter
+main: lunarelly\personaadapter\SkinLoader
+
+api: 4.0.0
+version: 1.0.0
+
+description: "Persona colored skins fix"
+prefix: "PersonaAdapter"
+
+author: Lunarelly
+website: https://github.com/Lunarelly
