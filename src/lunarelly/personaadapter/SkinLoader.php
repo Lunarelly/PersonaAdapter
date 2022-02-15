@@ -21,6 +21,8 @@ use pocketmine\plugin\PluginBase;
 use pocketmine\entity\Skin;
 use pocketmine\network\mcpe\convert\SkinAdapterSingleton;
 
+use GdImage;
+
 class SkinLoader extends PluginBase
 {
 
@@ -67,10 +69,10 @@ class SkinLoader extends PluginBase
     }
 
     /**
-     * @param $image
+     * @param GdImage $image
      * @return string
      */
-    public function fromImage($image): string
+    public function fromImage(GdImage $image): string
     {
         $bytes = "";
 
