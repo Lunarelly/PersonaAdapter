@@ -1,7 +1,5 @@
 <?php
 
-declare(strict_types=1);
-
 /**
  *  _                               _ _
  * | |   _   _ _ __   __ _ _ __ ___| | |_   _
@@ -15,6 +13,8 @@ declare(strict_types=1);
  *
  */
 
+declare(strict_types=1);
+
 namespace lunarelly\personaadapter;
 
 use pocketmine\entity\Skin;
@@ -23,11 +23,6 @@ use pocketmine\network\mcpe\protocol\types\skin\SkinData;
 
 class SkinAdapterPersona extends LegacySkinAdapter
 {
-
-    /**
-     * @param SkinData $data
-     * @return Skin
-     */
     public function fromSkinData(SkinData $data): Skin
     {
         if ($data->isPersona()) {
