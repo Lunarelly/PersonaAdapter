@@ -2,4 +2,4 @@
 
 Persona skins fix for PocketMine.
 
-Current API: 4.0.0
+Current API: 5.0.0
