@@ -1,7 +1,5 @@
 <?php
 
-declare(strict_types=1);
-
 /**
  *  _                               _ _
  * | |   _   _ _ __   __ _ _ __ ___| | |_   _
@@ -15,6 +13,8 @@ declare(strict_types=1);
  *
  */
 
+declare(strict_types=1);
+
 namespace lunarelly\personaadapter;
 
 use pocketmine\plugin\PluginBase;
@@ -25,20 +25,9 @@ use GdImage;
 
 class SkinLoader extends PluginBase
 {
-
-    /**
-     * @var SkinLoader|null
-     */
     public static ?SkinLoader $instance = null;
-
-    /**
-     * @var Skin
-     */
     private Skin $skin;
 
-    /**
-     * @return void
-     */
     public function onEnable(): void
     {
         self::$instance = $this;
@@ -60,22 +49,14 @@ class SkinLoader extends PluginBase
         TypeConverter::getInstance()->setSkinAdapter(new SkinAdapterPersona());
     }
 
-    /**
-     * @return SkinLoader
-     */
     public static function getInstance(): SkinLoader
     {
         return self::$instance;
     }
 
-    /**
-     * @param GdImage $image
-     * @return string
-     */
     public function fromImage(GdImage $image): string
     {
         $bytes = "";
-
         for ($y = 0; $y < imagesy($image); $y++) {
             for ($x = 0; $x < imagesx($image); $x++) {
                 $rgba = @imagecolorat($image, $x, $y);
@@ -93,9 +74,6 @@ class SkinLoader extends PluginBase
         return $bytes;
     }
 
-    /**
-     * @return Skin
-     */
     public function getSkin(): Skin
     {
         return $this->skin;
