@@ -19,7 +19,7 @@ namespace lunarelly\personaadapter;
 
 use pocketmine\plugin\PluginBase;
 use pocketmine\entity\Skin;
-use pocketmine\network\mcpe\convert\SkinAdapterSingleton;
+use pocketmine\network\mcpe\convert\TypeConverter;
 
 use GdImage;
 
@@ -57,7 +57,7 @@ class SkinLoader extends PluginBase
             @imagedestroy($image);
         }
 
-        SkinAdapterSingleton::set(new SkinAdapterPersona());
+        TypeConverter::getInstance()->setSkinAdapter(new SkinAdapterPersona());
     }
 
     /**
